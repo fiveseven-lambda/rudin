@@ -39,7 +39,7 @@ document(| title = {}; author = {} |)'<
 		ここで ${ C' = \setsep{ \app{C_{r_x}}{x} }{ x \in V } }，
 		${ V' = \bigcup_{c \in C'} c } とすると，
 		${ \app{C_{r_x}}{x} \subset V } より ${ V' \subset V }，
-		${ x \in \app{C_{r_x}}{x} } より ${ V \subset V' } であるから
+		${ x \in \app{C_{r_x}}{x} } （${\forall x \in V}）より ${ V \subset V' } であるから
 		${ V = V' }．よって ${ V \in \tau }．
 	}
 >
