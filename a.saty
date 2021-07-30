@@ -1,0 +1,45 @@
+@require: stdjareport
+@require: itemize
+@require: azmath/azmath
+
+let-math \left-open = math-paren Math.paren-left Math.sqbracket-right
+let-math \right-open = math-paren Math.sqbracket-left Math.paren-right
+in
+
+document(| title = {}; author = {} |)'<
+	+p{
+		ある集合 ${ X } と関数 ${ \rho: X \times X \to \right-open{0, \infty} } が次を満たすとき ${ \paren{X, \rho} } を距離空間という．
+		\listing {
+			* ${ x = y \Longleftrightarrow \app{\rho}{x, y} = 0 } for all ${x, y \in X}
+			* ${ \app{\rho}{x, y} = \app{\rho}{y, x} } for all ${x, y \in X}
+			* ${ \app{\rho}{x, y} \leq \app{\rho}{x, z} + \app{\rho}{z, y} } for all ${x, y, z \in X}
+		}
+	}
+	+p{
+		${\paren{X, \rho}} を距離空間とする．各 ${ x \in X }， ${ r \in \right-open{0, \infty} } について開球 ${ \app{C_r}{x} \subset X } を
+		\eqn(${ \app{C_r}{x} = \setsep{ y }{ \app{\rho}{x, y} < r } });
+		で定義し，
+		\eqn(${ C = \setsep{ \app{C_r}{x} }{ x \in X, r \in \right-open{0, \infty} } });
+		\eqn(${ \tau = \setsep{ \bigcup_{c \in C'} c }{ C' \subset C } });
+		とする．
+	}
+	+p{
+		${ V_1, \ldots, V_n \in \tau } について ${ V = \bigcap_{i = 1}^n V_i } が ${ V \in \tau } を満たすことを証明する．
+		${ \tau } の定義より，各 ${ i = 1, \ldots, n } について
+		ある ${ C_i \subset C } が存在して ${ V_i = \bigcup_{c \in C_i} c } である．
+		任意の ${ x \in V } と ${ i = 1, \ldots, n } について，
+		${ x \in V_i } よりある開球 ${ \app{C_r}{y} \in C_i } が存在して ${ x \in \app{C_r}{y} } である．
+		このとき，実数 ${r_i} を ${ 0 < r_i \leq r - \app{\rho}{x, y} } となるようにとると，
+		${ \app{C_{r_i}}{x} \subset \app{C_r}{y} }
+		より ${ \app{C_{r_i}}{x} \subset V_i } となる．
+		${ r_1, \ldots, r_n } の最小値を ${ r_x } とすると，
+		${ \app{C_{r_x}}{x} \subset V_i, \forall i = 1, \ldots, n } より
+		${ \app{C_{r_x}}{x} \subset V } であり，
+		また ${ r_x > 0 } より ${ x \in \app{C_{r_x}}{x} } である．
+		ここで ${ C' = \setsep{ \app{C_{r_x}}{x} }{ x \in V } }，
+		${ V' = \bigcup_{c \in C'} c } とすると，
+		${ \app{C_{r_x}}{x} \subset V } より ${ V' \subset V }，
+		${ x \in \app{C_{r_x}}{x} } より ${ V \subset V' } であるから
+		${ V = V' }．よって ${ V \in \tau }．
+	}
+>
