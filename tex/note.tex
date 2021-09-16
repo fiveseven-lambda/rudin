@@ -1,0 +1,38 @@
+\documentclass[uplatex]{jsarticle}
+\begin{document}
+\section{1.11}
+	Suppose $S$ is an ordered set with the least-upper-bound property,
+	$B \subset S$,
+	$B$ is not empty,
+	and $B$ is bounded below.
+
+	Let $L$ be the set of all lower bounds of $B$. $L \subset S$.
+
+	Because $B$ is bounded below, $L$ is not empty.
+
+	Take $b \in B$.
+	For all $l \in L$, $l$ is a lower bound of $B$,
+	so $l \leq b$ holds.
+	This means $b$ is an upper bound of $L$.
+	Because $B$ is not empty,
+	$b \in B$ exists
+	and $L$ is bounded above.
+
+	Due to the least-upper-bound property of $S$,
+	$\sup L$ exists:
+	$\sup L$ is an upper bound of $L$,
+	and any $\gamma < \sup L$ is not an upper bound of $L$.
+
+	For any $b \in B$,
+	$b$ is an upper bound of $L$,
+	so $\sup L \leq b$.
+	This means $\sup L$ is a lower bound of $B$,
+	and $\sup L \in L$.
+
+	Because $\sup L$ is an upper bound of $L$,
+	any $l \in L$ satisfies $l \leq \sup L$.
+
+	So, $\sup L$ is a lower bound of $B$,
+	and any $l > \sup L$ is not a lower bound of $B$.
+	This means $\sup L = \inf B$.
+\end{document}
