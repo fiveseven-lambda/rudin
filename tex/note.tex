@@ -1,4 +1,5 @@
 \documentclass[uplatex]{jsarticle}
+\usepackage{amsmath, amssymb}
 \begin{document}
 \section{1.11}
 	Suppose $S$ is an ordered set with the least-upper-bound property,
@@ -35,4 +36,23 @@
 	So, $\sup L$ is a lower bound of $B$,
 	and any $l > \sup L$ is not a lower bound of $B$.
 	This means $\sup L = \inf B$.
+\section{2.23}
+\newcommand{\co}{\mathrm{c}}
+	By definition,
+	$E^\co$ is closed if and only if
+	any limit point of $E^\co$ is not a point of $E$.
+	This is equivalent to its contrapositive:
+	any $p \in E$ is not a limit point of $E^\co$.
+	By the definition of a limit point,
+	this means that every $p \in E$
+	has at least one neighborhood $N_r(p)$ such that
+	every $q \in N_r(p)$ satisfies $q \in E$
+	as long as $p \neq q$.
+	The constraint ``as long as $p \neq q$" is
+	actually unnecessary,
+	because $p$ itself also satisfies $p \in E$.
+	So, this can be restated as
+	every $p \in E$ has at least one neighborhood $N_r(p)$
+	such that $N_r(p) \subset E$.
+	This is exactly the definition of an open set.
 \end{document}
