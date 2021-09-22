@@ -55,4 +55,19 @@
 	every $p \in E$ has at least one neighborhood $N_r(p)$
 	such that $N_r(p) \subset E$.
 	This is exactly the definition of an open set.
+\section{2.34}
+	Let $(X, d)$ be a metric space
+	and $K$ a compact subset of $X$.
+	Take $p \in K^\co$.
+	For each $r > 0$,
+	define $V_r = \{q \in X \mid d(p, q) > r \}$,
+	then $V_r \subset V_{r'}$ if $r > r'$.
+	Since $\bigcup_r V_r = X \setminus \{p\} \supset K$ and $K$ is compact,
+	we can choose $r_1, \ldots, r_n > 0$
+	with $K \subset \bigcup_{i = 1}^n V_{r_i}$.
+	Let $r_{\rm min} = \min\{r_1, \ldots, r_n\}$,
+	then $K \subset V_{r_{\rm min}}$,
+	hence $N_{r_{\rm min}}(p) \subset K^\co$.
+	Therefore $K^\co$ is open
+	and $K$ is closed.
 \end{document}
